@@ -1,2 +1,1 @@
-dotfiles
-========
+various configuration files
