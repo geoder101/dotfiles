@@ -14,7 +14,7 @@
 	dd              = diff --cached
 	a               = add
 	aa              = add -A
-	cm              = commit -m
+	cm              = commit
 	rr              = rebase -i
 	wip-list        = stash list
 	wip-save        = "!f() { git stash --all && git reset --hard HEAD; }; f"
