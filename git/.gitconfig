@@ -1,0 +1,22 @@
+[user]
+	email           = geoder101@gmail.com
+	name            = George Dernikos
+[push]
+	default         = simple
+[alias]
+	l               = log --decorate --oneline
+	ll              = log --graph --all --decorate --oneline
+	co              = checkout
+	cob             = checkout -b
+	b               = branch
+	s               = status
+	d               = diff
+	dd              = diff --cached
+	a               = add
+	aa              = add -A
+	cm              = commit -m
+	wip-list        = stash list
+	wip-save        = "!f() { git stash --all && git reset --hard HEAD; }; f"
+	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD * && git stash drop; }; f"
+	wip-drop        = stash drop
+	up              = "!f() { git pull --rebase && git submodule update --init --recursive; }; f"
