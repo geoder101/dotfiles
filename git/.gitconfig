@@ -4,31 +4,37 @@
 [push]
 	default         = simple
 [alias]
+	# Status
+	s               = status
 	l               = log --decorate --oneline
 	ll              = log --decorate --oneline --graph --all
+	b               = branch
+	d               = diff
+	dd              = diff --cached
+	# Checkout
 	co              = checkout
 	cop             = checkout -p
 	cob             = checkout -b
-	b               = branch
-	s               = status
-	d               = diff
-	dd              = diff --cached
+	# Stage
 	a               = add
 	ap              = add -p
+	aa              = add -A
 	na              = reset HEAD
 	nap             = reset -p HEAD
 	naa             = reset HEAD -- *
 	yolo            = reset --hard
-	aa              = add -A
+	# Commit
 	cm              = commit
 	cmm             = commit -m
 	rr              = rebase -i
 	m               = merge
 	mm              = merge --no-ff
+	# Update
+	upm             = "!f() { git pull && git submodule update --init --recursive; }; f"
+	upr             = "!f() { git pull -r && git submodule update --init --recursive; }; f"
+	# WIP
 	wip-list        = stash list
 	wip-save        = "!f() { git stash -u && git reset --hard HEAD; }; f"
 	wip-save-all    = "!f() { git stash -a && git reset --hard HEAD; }; f"
 	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD -- * && git stash drop; }; f"
 	wip-drop        = stash drop
-	upm             = "!f() { git pull && git submodule update --init --recursive; }; f"
-	upr             = "!f() { git pull -r && git submodule update --init --recursive; }; f"
