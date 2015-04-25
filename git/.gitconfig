@@ -28,4 +28,5 @@
 	wip-save-all    = "!f() { git stash -a && git reset --hard HEAD; }; f"
 	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD -- * && git stash drop; }; f"
 	wip-drop        = stash drop
-	up              = "!f() { git pull --rebase && git submodule update --init --recursive; }; f"
+	upm             = "!f() { git pull && git submodule update --init --recursive; }; f"
+	upr             = "!f() { git pull -r && git submodule update --init --recursive; }; f"
