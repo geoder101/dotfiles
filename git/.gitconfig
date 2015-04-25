@@ -19,6 +19,7 @@
 	yolo            = reset --hard
 	aa              = add -A
 	cm              = commit
+	cmm             = commit -m
 	rr              = rebase -i
 	m               = merge
 	mm              = merge --no-ff
