@@ -17,6 +17,7 @@
 	ap              = add -p
 	na              = reset HEAD
 	nap             = reset -p HEAD
+	naa             = reset HEAD -- *
 	yolo            = reset --hard
 	aa              = add -A
 	cm              = commit
