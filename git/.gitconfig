@@ -21,7 +21,8 @@
 	m               = merge
 	mm              = merge --no-ff
 	wip-list        = stash list
-	wip-save        = "!f() { git stash --all && git reset --hard HEAD; }; f"
-	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD * && git stash drop; }; f"
+	wip-save        = "!f() { git stash -u && git reset --hard HEAD; }; f"
+	wip-save-all    = "!f() { git stash -a && git reset --hard HEAD; }; f"
+	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD -- * && git stash drop; }; f"
 	wip-drop        = stash drop
 	up              = "!f() { git pull --rebase && git submodule update --init --recursive; }; f"
