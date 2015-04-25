@@ -5,7 +5,7 @@
 	default         = simple
 [alias]
 	l               = log --decorate --oneline
-	ll              = log --graph --all --decorate --oneline
+	ll              = log --decorate --oneline --graph --all
 	co              = checkout
 	cob             = checkout -b
 	b               = branch
