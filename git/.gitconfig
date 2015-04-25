@@ -13,6 +13,8 @@
 	d               = diff
 	dd              = diff --cached
 	a               = add
+	na              = reset HEAD
+	yolo            = reset --hard
 	aa              = add -A
 	cm              = commit
 	rr              = rebase -i
