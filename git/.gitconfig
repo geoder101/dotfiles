@@ -18,6 +18,8 @@
 	aa              = add -A
 	cm              = commit
 	rr              = rebase -i
+	m               = merge
+	mm              = merge --no-ff
 	wip-list        = stash list
 	wip-save        = "!f() { git stash --all && git reset --hard HEAD; }; f"
 	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD * && git stash drop; }; f"
