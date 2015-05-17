@@ -7,10 +7,14 @@
 	# Status
 	s               = status
 	l               = log --decorate --oneline
+	ld              = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
 	ll              = log --decorate --oneline --graph --all
+	lld             = log --graph --all --pretty=format:"%h%x09%an%x09%ad%x09%s"
 	b               = branch
 	d               = diff
+	dw              = diff --word-diff=color
 	dd              = diff --cached
+	ddw             = diff --cached --word-diff=color
 	# Checkout
 	co              = checkout
 	cop             = checkout -p
