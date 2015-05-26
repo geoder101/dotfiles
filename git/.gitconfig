@@ -16,6 +16,7 @@
 	dw              = diff --word-diff=color
 	dd              = diff --cached
 	ddw             = diff --cached --word-diff=color
+	v               = show
 	# Checkout
 	co              = checkout
 	cop             = checkout -p
