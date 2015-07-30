@@ -5,6 +5,9 @@ alias xopen='xdg-open'
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
 alias g='git'
+alias l='ls --color'
+alias ll='ls -lh --color'
+alias la='ls -lhA --color'
 
 source /usr/share/bash-completion/completions/git
 complete -o default -o nospace -F _git g
