@@ -7,7 +7,6 @@ abbr -a g=git
 abbr -a dk=docker
 abbr -a dkc=docker-compose
 abbr -a dkm=docker-machine
-abbr -a dks=docker-swarm
 abbr -a dkr=docker run -it --rm
 
 set -x DOCKER_TLS_VERIFY "1"
