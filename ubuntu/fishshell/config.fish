@@ -1,5 +1,4 @@
 alias l ls
-alias vim /usr/local/bin/vim
 
 set -U fish_user_abbreviations
 
