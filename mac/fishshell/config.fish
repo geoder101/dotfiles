@@ -1,3 +1,7 @@
+#!/usr/bin/env fish
+
+# Aliases
+
 alias l ls
 alias vim /usr/local/bin/vim
 
@@ -9,9 +13,11 @@ abbr -a dkc=docker-compose
 abbr -a dkm=docker-machine
 abbr -a dkr=docker run -it --rm
 
-set docker_machine default
+# Docker env
 
-switch (docker-machine status $docker_machine)
-    case Running
-        eval (docker-machine env $docker_machine --shell fish)
+set docker_machine default
+set docker_env_file /tmp/docker.fish
+
+if test -e $docker_env_file
+    eval (cat $docker_env_file)
 end
