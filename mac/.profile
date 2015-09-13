@@ -12,9 +12,11 @@ alias g='git'
 alias vim='/usr/local/bin/vim'
 
 # shell prompt
+
 export PS1="\u@\h\w $ "
 
 # bash completion
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
@@ -25,15 +27,23 @@ fi
 
 
 # Add GHC 7.10.1 to the PATH, via https://ghcformacosx.github.io/
+
 export GHC_DOT_APP="/Applications/ghc-7.10.1.app"
 if [ -d "$GHC_DOT_APP" ]; then
   export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
 fi
 
 # VSCode
+
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
+
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
+
+# go lang
+
+export GOPATH=$HOME/golang
+export PATH=$PATH:$GOPATH/bin

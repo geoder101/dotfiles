@@ -13,6 +13,11 @@ abbr -a dkc=docker-compose
 abbr -a dkm=docker-machine
 abbr -a dkr=docker run -it --rm
 
+# go lang
+
+set -x GOPATH $HOME/golang
+set -x PATH $PATH $GOPATH/bin
+
 # Docker env
 
 set docker_machine default
