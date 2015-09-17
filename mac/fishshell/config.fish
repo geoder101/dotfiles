@@ -26,3 +26,7 @@ set docker_env_file /tmp/docker.fish
 if test -e $docker_env_file
     eval (cat $docker_env_file)
 end
+
+# Haskell
+
+set -x PATH $PATH "/Applications/ghc-7.10.1.app/Contents/bin"
