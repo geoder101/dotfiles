@@ -30,3 +30,7 @@ end
 # Haskell
 
 set -x PATH $PATH "/Applications/ghc-7.10.1.app/Contents/bin"
+
+# Android SDK
+
+set -x PATH $PATH /Users/geoder101/Library/Android/sdk/platform-tools /Users/geoder101/Library/Android/sdk/tools
