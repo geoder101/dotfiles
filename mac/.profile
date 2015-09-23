@@ -47,3 +47,7 @@ export PATH
 
 export GOPATH=$HOME/golang
 export PATH=$PATH:$GOPATH/bin
+
+# Android SDK
+
+export PATH=$PATH:/Users/geoder101/Library/Android/sdk/platform-tools:/Users/geoder101/Library/Android/sdk/tools
