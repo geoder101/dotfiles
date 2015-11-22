@@ -11,6 +11,8 @@
 	ld              = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
 	ll              = log --decorate --oneline --graph --all
 	lld             = log --graph --all --pretty=format:"%h%x09%an%x09%ad%x09%s"
+	lb              = "!f() { git l master..; }; f"
+	lbb             = "!f() { git l $1..; }; f"
 	b               = branch
 	d               = diff
 	dw              = diff --word-diff=color
