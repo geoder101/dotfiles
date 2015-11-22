@@ -13,7 +13,7 @@
 	lld             = log --graph --all --pretty=format:"%h%x09%an%x09%ad%x09%s" # [l]og with extra [l]og (graph) formatting with [d]ate info
 	lb              = "!f() { git l master..; }; f" # [l]og from master to current [b]ranch
 	lbb             = "!f() { git l $1..; }; f" # [l]og from user-defined [b]ranch ($1) to current [b]ranch
-	b               = branch # list of [b]ranchces
+	b               = branch # list of [b]ranches
 	d               = diff # [d]iff
 	dw              = diff --word-diff=color # [d]iff in [w]ord mode
 	dd              = diff --cached # [d]iff for index [d]iff
