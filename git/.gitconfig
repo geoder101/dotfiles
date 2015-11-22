@@ -5,42 +5,44 @@
 	default         = simple
 [alias]
 	# Status
-	s               = status
-	sq              = status -uno
-	l               = log --decorate --oneline
-	ld              = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
-	ll              = log --decorate --oneline --graph --all
-	lld             = log --graph --all --pretty=format:"%h%x09%an%x09%ad%x09%s"
-	b               = branch
-	d               = diff
-	dw              = diff --word-diff=color
-	dd              = diff --cached
-	ddw             = diff --cached --word-diff=color
-	v               = show
+	s               = status # [s]tatus
+	sq              = status -uno # [s]tatus in [q]uiet mode
+	l               = log --decorate --oneline # [l]og
+	ld              = log --pretty=format:"%h%x09%an%x09%ad%x09%s" # [l]og with [d]ate info
+	ll              = log --decorate --oneline --graph --all # [l]og with extra [l]og (graph) formatting
+	lld             = log --graph --all --pretty=format:"%h%x09%an%x09%ad%x09%s" # [l]og with extra [l]og (graph) formatting with [d]ate info
+	lb              = "!f() { git l master..; }; f" # [l]og from master to current [b]ranch
+	lbb             = "!f() { git l $1..; }; f" # [l]og from user-defined [b]ranch ($1) to current [b]ranch
+	b               = branch # list of [b]ranchces
+	d               = diff # [d]iff
+	dw              = diff --word-diff=color # [d]iff in [w]ord mode
+	dd              = diff --cached # [d]iff for index [d]iff
+	ddw             = diff --cached --word-diff=color # [d]iff for index [d]iff in [w]ord mode
+	v               = show # [v]iew commit
 	# Checkout
-	co              = checkout
-	cop             = checkout -p
-	cob             = checkout -b
+	co              = checkout # [c]heck[o]ut
+	cop             = checkout -p # [c]heck[o]ut in [p]atch mode
+	cob             = checkout -b # [c]heck[o]ut in a new [b]ranch
 	# Stage
-	a               = add
-	ap              = add -p
-	aa              = add -A
-	na              = reset HEAD
-	nap             = reset -p HEAD
-	naa             = reset HEAD -- *
-	yolo            = reset --hard
+	a               = add # [a]dd
+	ap              = add -p # [a]dd in [p]atch mode
+	aa              = add -A # [a]dd [a]ll
+	na              = reset HEAD # [n]ot [a]dd
+	nap             = reset -p HEAD # [n]ot [a]dd in [p]atch mode
+	naa             = reset HEAD -- * # [n]ot [a]dd [a]ll
+	yolo            = reset --hard # [y]ou [o]nly [l]ive [o]nce -- use at your own discretion
 	# Commit
-	cm              = commit
-	cmm             = commit -m
-	rr              = rebase -i
-	m               = merge
-	mm              = merge --no-ff
+	cm              = commit # [c]o[m]mit
+	cmm             = commit -m # [c]o[m]mit with [m]essage
+	rr              = rebase -i # [r]ebase in inte[r]active mode
+	m               = merge # [m]erge
+	mm              = merge --no-ff # [m]erge with a [m]erge commit
 	# Update
-	upm             = "!f() { git pull && git submodule update --init --recursive; }; f"
-	upr             = "!f() { git pull -r && git submodule update --init --recursive; }; f"
+	upm             = "!f() { git pull && git submodule update --init --recursive; }; f" # [up]date (pull) in [m]erge mode
+	upr             = "!f() { git pull -r && git submodule update --init --recursive; }; f" # [up]date (pull) in [r]ebase mode
 	# WIP
-	wip-list        = stash list
-	wip-save        = "!f() { git stash -u && git reset --hard HEAD; }; f"
-	wip-save-all    = "!f() { git stash -a && git reset --hard HEAD; }; f"
-	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD -- * && git stash drop; }; f"
-	wip-drop        = stash drop
+	wip-list        = stash list # show [w]ork-[i]n-[p]rogress list
+	wip-save        = "!f() { git stash -u && git reset --hard HEAD; }; f" # in [w]ork-[i]n-[p]rogress list do: [save]
+	wip-save-all    = "!f() { git stash -a && git reset --hard HEAD; }; f" # in [w]ork-[i]n-[p]rogress list do: [save]-[all]
+	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD -- * && git stash drop; }; f" # from [w]ork-[i]n-[p]rogress list do: [restore] (as-is)
+	wip-drop        = stash drop # in [w]ork-[i]n-[p]rogress list do: [drop] tip
