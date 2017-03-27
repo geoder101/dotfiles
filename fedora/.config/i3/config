@@ -176,3 +176,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # Touchpad properties
 exec --no-startup-id xinput set-prop 'ETPS/2 Elantech Touchpad' 278 1
+
+# Desktop background
+exec --no-startup-id xsetroot -solid "#333333"
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Matrix_Code.png
