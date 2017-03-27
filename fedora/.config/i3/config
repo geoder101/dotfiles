@@ -173,3 +173,6 @@ bindsym XF86AudioPrev exec playerctl previous
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad properties
+exec --no-startup-id xinput set-prop 'ETPS/2 Elantech Touchpad' 278 1
