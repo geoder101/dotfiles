@@ -84,4 +84,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$PATH:$(readlink --canonicalize ~/.local/bin)"
+export PATH="$PATH:$(readlink --canonicalize ~/.local/bin):/usr/local/go/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
