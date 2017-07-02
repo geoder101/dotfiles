@@ -125,26 +125,26 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -154,10 +154,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-# Screen lock
-bindsym $mod+Shift+x exec --no-startup-id i3lock --color '#1f222d'
-#bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/lockscreen.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -185,4 +181,19 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/Matrix_Code.png
 exec --no-startup-id "setxkbmap -model pc105 -layout us,gr -option grp:alt_shift_toggle"
 
 # Screenshot
-bindsym --release $mod+Print exec --no-startup-id [ -d ~/Pictures/Screenshots ] || mkdir ~/Pictures/Screenshots && import ~/Pictures/Screenshots/Screenshot_$(date +%Y-%m-%d-%H-%M-%S).png
+bindsym --release $mod+Print exec --no-startup-id ~/.config/i3/ctl.sh screenshot
+
+# System lock/exit
+mode "system" {
+    bindsym l exec --no-startup-id ~/.config/i3/ctl.sh lock, mode "default"
+    bindsym e exec --no-startup-id ~/.config/i3/ctl.sh logout, mode "default"
+    bindsym s exec --no-startup-id ~/.config/i3/ctl.sh suspend, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/ctl.sh hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/.config/i3/ctl.sh reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id ~/.config/i3/ctl.sh shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "system"
