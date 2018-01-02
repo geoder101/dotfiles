@@ -204,10 +204,8 @@ bindsym $mod+Pause mode "system"
 # Application hotkeys
 mode "application" {
     bindsym e exec --no-startup-id "nautilus", mode "default"
-    bindsym w exec --no-startup-id "google-chrome", mode "default"
-    bindsym Shift+w exec --no-startup-id "google-chrome --incognito", mode "default"
-    bindsym f exec --no-startup-id "firefox", mode "default"
-    bindsym Shift+f exec --no-startup-id "firefox --private-window", mode "default"
+    bindsym w exec --no-startup-id "firefox", mode "default"
+    bindsym Shift+w exec --no-startup-id "firefox --private-window", mode "default"
     bindsym c exec --no-startup-id "code", mode "default"
     bindsym v exec --no-startup-id "gnome-terminal --command vim", mode "default"
     bindsym t exec --no-startup-id "gedit", mode "default"
