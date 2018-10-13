@@ -38,11 +38,5 @@
 	m               = merge # [m]erge
 	mm              = merge --no-ff # [m]erge with a [m]erge commit
 	# Update
-	upm             = "!f() { git pull && git submodule update --init --recursive; }; f" # [up]date (pull) in [m]erge mode
-	upr             = "!f() { git pull -r && git submodule update --init --recursive; }; f" # [up]date (pull) in [r]ebase mode
-	# WIP
-	wip-list        = stash list # show [w]ork-[i]n-[p]rogress list
-	wip-save        = "!f() { git stash -u && git reset --hard HEAD; }; f" # in [w]ork-[i]n-[p]rogress list do: [save]
-	wip-save-all    = "!f() { git stash -a && git reset --hard HEAD; }; f" # in [w]ork-[i]n-[p]rogress list do: [save]-[all]
-	wip-restore     = "!f() { git add -A && (git stash apply || git checkout --theirs *) && git add -A && git reset HEAD -- * && git stash drop; }; f" # from [w]ork-[i]n-[p]rogress list do: [restore] (as-is)
-	wip-drop        = stash drop # in [w]ork-[i]n-[p]rogress list do: [drop] tip
+	p               = pull # [p]ull
+	pp              = pull -p # [p]ull with [p]rune option
