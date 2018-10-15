@@ -124,7 +124,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec ~/.config/i3/ctl.sh exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -155,13 +155,13 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command i3status
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/ctl.sh volup
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/ctl.sh voldown
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/ctl.sh volmute
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -173,12 +173,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-# Touchpad properties
-exec --no-startup-id xinput set-prop 'ETPS/2 Elantech Touchpad' 278 1
-
 # Desktop background
 exec --no-startup-id xsetroot -solid "#333333"
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Matrix_Code.png
 
 # Keyboard input language switch
 exec --no-startup-id "setxkbmap -model pc105 -layout us,gr -option grp:alt_shift_toggle"
@@ -216,3 +212,6 @@ mode "application" {
     bindsym Escape mode "default"
 }
 bindsym $mod+x mode "application"
+
+# Initialization
+exec_always --no-startup-id ~/.config/i3/ctl.sh init
