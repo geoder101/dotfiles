@@ -4,7 +4,10 @@ init() {
     feh --bg-scale ~/Pictures/Matrix_Code.png
     for i in {0..1}; do pactl set-sink-volume $i 60%; done
     numlockx on
-    i3-msg 'workspace ctl; exec pavucontrol; workspace 2'
+    i3-msg 'workspace ctl;
+            exec arandr;
+            exec pavucontrol;
+            workspace 2'
 }
 
 lock() {
