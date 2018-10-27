@@ -87,3 +87,4 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$(readlink --canonicalize ~/.local/bin):/usr/local/go/bin"
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$PATH:/usr/share/dotnet"
+export TERM=xterm
