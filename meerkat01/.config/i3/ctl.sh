@@ -1,13 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 init() {
-    feh --bg-scale ~/Pictures/Matrix_Code.png
-    for i in {0..1}; do pactl set-sink-volume $i 60%; done
+    feh --bg-fill ~/Pictures/Matrix_Code.png
     numlockx on
-    i3-msg 'workspace ctl;
-            exec arandr;
-            exec pavucontrol;
-            workspace 2'
+    for sink in {0..10}; do
+        pactl set-sink-mute $sink 0
+        pactl set-sink-volume $sink 60%
+    done
 }
 
 lock() {
@@ -44,13 +43,19 @@ case "$1" in
         import ~/Pictures/Screenshots/Screenshot_$(date +%Y-%m-%d-%H-%M-%S).png
         ;;
     volup)
-        for sink in {0..1}; do pactl set-sink-volume $sink +5%; done
+        for sink in {0..10}; do
+            pactl set-sink-volume $sink +5%
+        done
         ;;
     voldown)
-        for sink in {0..1}; do pactl set-sink-volume $sink -5%; done
+        for sink in {0..10}; do
+            pactl set-sink-volume $sink -5%
+        done
         ;;
     volmute)
-        for sink in {0..1}; do pactl set-sink-mute $sink toggle; done
+        for sink in {0..10}; do
+            pactl set-sink-mute $sink toggle
+        done
         ;;
     *)
         echo "Usage: $0 <cmd>"
